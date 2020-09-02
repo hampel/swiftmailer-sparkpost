@@ -1,7 +1,7 @@
 {
     "name": "hampel/swiftmailer-sparkpost",
     "type": "library",
-    "description": "A Swiftmailer Transport for SparkPost",
+    "description": "A Swift Mailer Transport for SparkPost",
     "license": "MIT",
 	"authors": [{
 		"name": "Simon Hampel",
@@ -16,5 +16,10 @@
     "require": {
         "swiftmailer/swiftmailer": "^6.0",
         "guzzlehttp/guzzle": "^6.0"
-    }
+    },
+	"autoload": {
+		"psr-4": {
+			"Hampel\\SparkPostDriver\\": "src/"
+		}
+	}
 }
