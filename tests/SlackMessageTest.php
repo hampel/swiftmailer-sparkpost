@@ -17,7 +17,6 @@ class MessageTest extends TestCase
 		$this->assertNull($message->getTransactional());
 		$this->assertNull($message->getIpPool());
 		$this->assertNull($message->getCampaignId());
-		$this->assertNull($message->getDescription());
 		$this->assertNull($message->getMetaData());
 	}
 
@@ -32,7 +31,6 @@ class MessageTest extends TestCase
 				'ip_pool' => 'foo2',
 			],
 			'campaign_id' => 'foo3',
-			'description' => 'foo4',
 			'metadata' => [
 				'foo' => 'bar'
 			]
@@ -47,7 +45,6 @@ class MessageTest extends TestCase
 		$this->assertTrue($message->getTransactional());
 		$this->assertEquals('foo2', $message->getIpPool());
 		$this->assertEquals('foo3', $message->getCampaignId());
-		$this->assertEquals('foo4', $message->getDescription());
 		$metadata = $message->getMetaData();
 		$this->assertIsArray($metadata);
 		$this->assertArrayHasKey('foo', $metadata);
@@ -63,7 +60,6 @@ class MessageTest extends TestCase
 		$message->setTransactional(true);
 		$message->setIpPool('foo2');
 		$message->setCampaignId('foo3');
-		$message->setDescription('foo4');
 		$message->setMetaData(['foo' => 'bar']);
 
 		$options = $message->getOptions();
@@ -76,7 +72,6 @@ class MessageTest extends TestCase
 		$this->assertArrayHasKey('transactional', $options['options']);
 		$this->assertArrayHasKey('ip_pool', $options['options']);
 		$this->assertArrayHasKey('campaign_id', $options);
-		$this->assertArrayHasKey('description', $options);
 		$this->assertArrayHasKey('metadata', $options);
 		$this->assertArrayHasKey('foo', $options['metadata']);
 
@@ -86,7 +81,6 @@ class MessageTest extends TestCase
 		$this->assertTrue($options['options']['transactional']);
 		$this->assertEquals('foo2', $options['options']['ip_pool']);
 		$this->assertEquals('foo3', $options['campaign_id']);
-		$this->assertEquals('foo4', $options['description']);
 		$this->assertEquals('bar', $options['metadata']['foo']);
 	}
 }

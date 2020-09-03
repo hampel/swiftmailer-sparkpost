@@ -70,16 +70,6 @@ class Message extends \Swift_Message
 		return $this->sparkPostOptions['campaign_id'] ?? null;
 	}
 
-	public function setDescription($description)
-	{
-		$this->sparkPostOptions['description'] = substr(strval($description), 0, 1024);
-	}
-
-	public function getDescription()
-	{
-		return $this->sparkPostOptions['description'] ?? null;
-	}
-
 	public function setMetaData(array $metadata)
 	{
 		$this->sparkPostOptions['metadata'] = $metadata;
