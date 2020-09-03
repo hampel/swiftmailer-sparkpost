@@ -56,6 +56,16 @@ class SparkPostTransport extends Transport
 
         $message->setBcc([]);
 
+        // customised from Laravel version
+	    $options = $this->options;
+
+	    if ($message instanceof \Hampel\SparkPostDriver\Message)
+	    {
+	    	$messageOptions = $message->getOptions();
+	    	$options = array_merge($options, $messageOptions);
+	    }
+	    // end customisation
+
         $response = $this->client->request('POST', $this->getEndpoint(), [
             'headers' => [
                 'Authorization' => $this->key,
@@ -65,7 +75,7 @@ class SparkPostTransport extends Transport
                 'content' => [
                     'email_rfc822' => $message->toString(),
                 ],
-            ], $this->options),
+            ], $options),
         ]);
 
         $message->getHeaders()->addTextHeader(
