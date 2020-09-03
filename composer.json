@@ -17,6 +17,9 @@
         "swiftmailer/swiftmailer": "^6.0",
         "guzzlehttp/guzzle": "^6.0"
     },
+	"require-dev": {
+		"phpunit/phpunit": "^8.0|^9.0"
+	},
 	"autoload": {
 		"psr-4": {
 			"Hampel\\SparkPostDriver\\": "src/"
