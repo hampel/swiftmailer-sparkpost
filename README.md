@@ -29,9 +29,12 @@ The SparkPost options available are defined in the API:
 ```php
 
 $sparkpostOptions = [
-	'open_tracking' => false,
-	'click_tracking' => true,
-	'transactional' => true,
+	'options' => [
+		'open_tracking' => false,
+		'click_tracking' => true,
+		'transactional' => true,
+	],
+	'campaign_id' => 'foo',
 ];
 
 $transport = new SparkPostTransport(
