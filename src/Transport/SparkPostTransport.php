@@ -57,13 +57,9 @@ class SparkPostTransport extends Transport
         $message->setBcc([]);
 
         // customised from Laravel version
-	    $options = $this->options;
-
-	    if ($message instanceof \Hampel\SparkPostDriver\Message)
-	    {
-	    	$messageOptions = $message->getOptions();
-	    	$options = array_merge($options, $messageOptions);
-	    }
+	    $options = ($message instanceof \Hampel\SparkPostDriver\Message) ?
+	        $message->mergeOptions($this->options) :
+	        $this->options;
 	    // end customisation
 
         $response = $this->client->request('POST', $this->getEndpoint(), [

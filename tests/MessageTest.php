@@ -9,7 +9,6 @@ class MessageTest extends TestCase
 		$message = new Message();
 
 		$this->assertIsArray($message->getOptions());
-		$this->assertEmpty($message->getOptions());
 
 		$this->assertNull($message->getStartTime());
 		$this->assertNull($message->getOpenTracking());
@@ -82,5 +81,70 @@ class MessageTest extends TestCase
 		$this->assertEquals('foo2', $options['options']['ip_pool']);
 		$this->assertEquals('foo3', $options['campaign_id']);
 		$this->assertEquals('bar', $options['metadata']['foo']);
+	}
+
+	public function test_mergeOptions_no_message_options()
+	{
+		$emptyOptions = [
+			'options' => [
+				'start_time' => null,
+				'open_tracking' => null,
+				'click_tracking' => null,
+				'transactional' => null,
+				'ip_pool' => null,
+			],
+			'campaign_id' => null,
+			'metadata' => null,
+		];
+
+		$message = new Message();
+		$this->assertEquals($emptyOptions, $message->getOptions());
+
+		$transportOptions = [
+			'options' => [
+				'start_time' => 'foo1',
+				'open_tracking' => false,
+				'click_tracking' => true,
+				'transactional' => false,
+				'ip_pool' => 'foo2',
+			],
+			'campaign_id' => 'foo3',
+			'metadata' => ['foo' => 'bar'],
+		];
+
+		$this->assertEquals($transportOptions, $message->mergeOptions($transportOptions));
+	}
+
+	public function test_mergeOptions_with_message_options()
+	{
+		$messageOptions = [
+			'options' => [
+				'start_time' => 'foo9',
+				'open_tracking' => true,
+				'click_tracking' => false,
+				'transactional' => true,
+				'ip_pool' => 'foo8',
+			],
+			'campaign_id' => 'foo7',
+			'metadata' => ['bar' => 'foo'],
+		];
+
+		$message = new Message();
+		$message->setOptions($messageOptions);
+		$this->assertEquals($messageOptions, $message->getOptions());
+
+		$transportOptions = [
+			'options' => [
+				'start_time' => 'foo1',
+				'open_tracking' => false,
+				'click_tracking' => true,
+				'transactional' => false,
+				'ip_pool' => 'foo2',
+			],
+			'campaign_id' => 'foo3',
+			'metadata' => ['foo' => 'bar'],
+		];
+
+		$this->assertEquals($messageOptions, $message->mergeOptions($transportOptions));
 	}
 }
