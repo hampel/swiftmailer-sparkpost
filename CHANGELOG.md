@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+1.1.1 (2020-09-04)
+------------------
+
+* bugfix: object_get is a Laravel helper - replace it with generic code to make class standalone
+
 1.1.0 (2020-09-03)
 ------------------
 
