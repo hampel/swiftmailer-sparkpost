@@ -118,9 +118,8 @@ class SparkPostTransport extends Transport
      */
     protected function getTransmissionId($response)
     {
-        return object_get(
-            json_decode($response->getBody()->getContents()), 'results.id'
-        );
+    	$results = json_decode($response->getBody()->getContents(), true);
+    	return $results['results']['id'] ?? null;
     }
 
     /**
