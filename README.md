@@ -5,6 +5,8 @@
 [![Open Issues](https://img.shields.io/github/issues-raw/hampel/swiftmailer-sparkpost.svg?style=flat-square)](https://github.com/hampel/swiftmailer-sparkpost/issues)
 [![License](https://img.shields.io/packagist/l/hampel/swiftmailer-sparkpost.svg?style=flat-square)](https://packagist.org/packages/hampel/swiftmailer-sparkpost)
 
+By [Simon Hampel](mailto:simon@hampelgroup.com)
+
 ## Description
 
 Standalone implementation of Laravel's SparkPost Mail Driver from 
