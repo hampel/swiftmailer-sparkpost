@@ -2,7 +2,7 @@
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/hampel/swiftmailer-sparkpost.svg?style=flat-square)](https://packagist.org/packages/hampel/swiftmailer-sparkpost)
 [![Total Downloads](https://img.shields.io/packagist/dt/hampel/swiftmailer-sparkpost.svg?style=flat-square)](https://packagist.org/packages/hampel/swiftmailer-sparkpost)
-[![Open Issues](https://img.shields.io/bitbucket/issues/hampel/swiftmailer-sparkpost.svg?style=flat-square)](https://bitbucket.org/hampel/swiftmailer-sparkpost/issues)
+[![Open Issues](https://img.shields.io/github/issues-raw/hampel/swiftmailer-sparkpost.svg?style=flat-square)](https://github.com/hampel/swiftmailer-sparkpost/issues)
 [![License](https://img.shields.io/packagist/l/hampel/swiftmailer-sparkpost.svg?style=flat-square)](https://packagist.org/packages/hampel/swiftmailer-sparkpost)
 
 ## Description

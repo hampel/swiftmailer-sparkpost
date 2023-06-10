@@ -9,10 +9,10 @@
 		"role": "Developer"
 	}],
 	"support": {
-		"issues": "https://bitbucket.org/hampel/swiftmailer-sparkpost/issues",
-		"source": "https://bitbucket.org/hampel/swiftmailer-sparkpost/src"
+		"issues": "https://github.com/hampel/swiftmailer-sparkpost/issues",
+		"source": "https://github.com/hampel/swiftmailer-sparkpost"
 	},
-	"homepage": "https://bitbucket.org/hampel/swiftmailer-sparkpost",
+	"homepage": "https://github.com/hampel/swiftmailer-sparkpost",
     "require": {
 		"php": ">=7.0.0",
         "swiftmailer/swiftmailer": "^6.0",
