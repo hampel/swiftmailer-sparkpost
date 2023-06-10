@@ -1,5 +1,6 @@
-<?php namespace Hampel\SparkPostDriver;
+<?php namespace Tests;
 
+use Hampel\SparkPostDriver\Message;
 use PHPUnit\Framework\TestCase;
 
 class MessageTest extends TestCase

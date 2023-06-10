@@ -25,5 +25,10 @@
 		"psr-4": {
 			"Hampel\\SparkPostDriver\\": "src/"
 		}
-	}
+	},
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    }
 }
